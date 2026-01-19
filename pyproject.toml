@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "loom-mcp"
+name = "m2ai-mcp-loom-advisor"
 version = "1.0.0"
 description = "MCP server for Loom video management"
 readme = "README.md"
@@ -39,7 +39,7 @@ dev = [
 ]
 
 [project.scripts]
-loom-mcp = "loom_mcp.server:main"
+loom-advisor = "loom_mcp.server:main"
 
 [project.urls]
 Homepage = "https://github.com/m2ai-mcp-servers/loom-mcp"

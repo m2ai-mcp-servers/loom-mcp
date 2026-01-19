@@ -1,4 +1,4 @@
-# loom-mcp
+# Loom Advisor
 
 MCP server for Loom video management. Provides tools to list, retrieve, edit, and merge Loom screen recordings.
 
@@ -12,24 +12,10 @@ MCP server for Loom video management. Provides tools to list, retrieve, edit, an
 ## Installation
 
 ```bash
-# Clone or download the package
-cd loom-mcp
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install with dev dependencies
-pip install -e ".[dev]"
+pip install m2ai-mcp-loom-advisor
 ```
 
 ## Configuration
-
-Create a `.env` file based on `.env.example`:
-
-```bash
-cp .env.example .env
-```
 
 Required environment variables:
 
@@ -55,13 +41,28 @@ Loom uses OAuth2 for authentication. To obtain an access token:
 
 ## Usage with Claude Desktop
 
-Add to your Claude Desktop config (`claude_desktop_config.json`):
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "loom": {
-      "command": "/path/to/loom-mcp/venv/bin/python",
+      "command": "loom-advisor",
+      "env": {
+        "LOOM_ACCESS_TOKEN": "your-access-token"
+      }
+    }
+  }
+}
+```
+
+Or run directly with Python:
+
+```json
+{
+  "mcpServers": {
+    "loom": {
+      "command": "python",
       "args": ["-m", "loom_mcp.server"],
       "env": {
         "LOOM_ACCESS_TOKEN": "your-access-token"

@@ -1,7 +1,7 @@
 {
   "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
   "name": "io.github.m2ai-mcp-servers/loom-mcp",
-  "displayName": "Loom MCP",
+  "displayName": "Loom Advisor",
   "version": "1.0.0",
   "description": "MCP server for Loom video management. Provides tools to list, retrieve, edit, and merge Loom screen recordings.",
   "author": {
@@ -13,7 +13,7 @@
   "runtime": "python",
   "installation": {
     "pip": {
-      "package": "loom-mcp"
+      "package": "m2ai-mcp-loom-advisor"
     }
   },
   "configuration": {
